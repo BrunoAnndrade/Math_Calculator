@@ -8,150 +8,166 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:text="000000"
-        android:layout_marginTop="140dp"
+        android:id="@+id/expressao"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:textSize="55sp"
-        android:textColor="@color/black"
-        android:gravity="end"
+        android:layout_marginTop="140dp"
         android:ellipsize="start"
+        android:gravity="end"
         android:singleLine="true"
-    />
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="55sp" />
+
     <TextView
-        android:text="11111"
+        android:id="@+id/resultado"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:textSize="70sp"
-        android:textColor="@color/black"
-        android:gravity="end"
-        android:textStyle="bold"
-        android:maxLines="1"
         android:ellipsize="end"
-    />
+        android:gravity="end"
+        android:maxLines="1"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="70sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-
         <TextView
-            android:text="AC"
+            android:id="@+id/LimparTudo"
             style="@style/Operation_Button"
-            android:textSize="50sp"
-            />
+            android:text="AC"
+            android:textSize="50sp" />
 
         <ImageView
             style="@style/Operation_Button"
             android:layout_height="40dp"
             android:layout_marginTop="27dp"
-
             android:src="@drawable/baseline_backspace_24" />
 
         <TextView
+            android:id="@+id/porcetagem"
             style="@style/Operation_Button"
             android:text="%"
-            android:textSize="50sp"
-            />
+            android:textSize="50sp" />
 
         <TextView
+            android:id="@+id/divisão"
+            style="@style/Operation_Button"
             android:text="÷"
-            style="@style/Operation_Button"
 
             />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
-            android:text="7"
+            android:id="@+id/numero_sete"
             style="@style/Numbers_Button"
-            />
+            android:text="7" />
+
         <TextView
-            android:text="8"
+            android:id="@+id/numero_oito"
             style="@style/Numbers_Button"
-            />
+            android:text="8" />
+
         <TextView
-            android:text="9"
+            android:id="@+id/numero_nove"
             style="@style/Numbers_Button"
-            />
+            android:text="9" />
+
         <TextView
-            android:text="x"
+            android:id="@+id/multiplicação"
             style="@style/Operation_Button"
-            />
+            android:text="x" />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
-            android:text="4"
+            android:id="@+id/numero_quatro"
             style="@style/Numbers_Button"
-            />
+            android:text="4" />
+
         <TextView
-            android:text="5"
+            android:id="@+id/numero_cinco"
             style="@style/Numbers_Button"
-            />
+            android:text="5" />
+
         <TextView
-            android:text="6"
+            android:id="@+id/numero_seis"
             style="@style/Numbers_Button"
-            />
+            android:text="6" />
+
         <TextView
-            android:text="-"
+            android:id="@+id/subtração"
             style="@style/Operation_Button"
-            />
+            android:text="-" />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
-            android:text="1"
+            android:id="@+id/numero_um"
             style="@style/Numbers_Button"
-            />
+            android:text="1" />
+
         <TextView
-            android:text="2"
+            android:id="@+id/numero_dois"
             style="@style/Numbers_Button"
-            />
+            android:text="2" />
+
         <TextView
-            android:text="3"
+            android:id="@+id/numero_tres"
             style="@style/Numbers_Button"
-            />
+            android:text="3" />
+
         <TextView
-            android:text="+"
+            android:id="@+id/adição"
             style="@style/Operation_Button"
-            />
+            android:text="+" />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
-            android:text="."
+            android:id="@+id/sinalPonto"
             style="@style/Numbers_Button"
-            />
+            android:text="." />
+
         <TextView
-            android:text="0"
+            android:id="@+id/numero_zero"
             style="@style/Numbers_Button"
-            />
+            android:text="0" />
+
         <TextView
-            android:text=","
+            android:id="@+id/virgula"
             style="@style/Numbers_Button"
-            />
+            android:text="," />
+
         <TextView
-            android:text="="
+            android:id="@+id/sinalIgual"
             style="@style/Operation_Button"
-            />
+            android:text="=" />
 
     </LinearLayout>
 </LinearLayout>
