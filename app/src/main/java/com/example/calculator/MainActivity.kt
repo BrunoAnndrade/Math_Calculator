@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import net.objecthunter.exp4j.ExpressionBuilder
+import java.lang.Exception
 
 
 class MainActivity : AppCompatActivity() {
@@ -13,8 +15,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        val resultado = findViewById<TextView>(R.id.resultado)
-        val expressao = findViewById<TextView>(R.id.expressao)
+        val tvResultado = findViewById<TextView>(R.id.resultado)
+        val tvExpressao = findViewById<TextView>(R.id.expressao)
 
 
         // esconder a actionbar
@@ -32,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         val oito = findViewById<TextView>(R.id.numero_oito)
         val nove = findViewById<TextView>(R.id.numero_nove)
         val ponto = findViewById<TextView>(R.id.sinalPonto)
-        val virgula = findViewById<TextView>(R.id.virgula)
+
 
 
         //Operadores
@@ -40,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         val subtraçao = findViewById<TextView>(R.id.subtração)
         val divisao = findViewById<TextView>(R.id.divisão)
         val multiplicacao = findViewById<TextView>(R.id.multiplicação)
-        val porcentagem = findViewById<TextView>(R.id.porcetagem)
+
 
 
         val igual = findViewById<TextView>(R.id.sinalIgual)
@@ -49,30 +51,55 @@ class MainActivity : AppCompatActivity() {
 
 
         limparTudo.setOnClickListener {
-            resultado.text = ""
-            expressao.text = ""
+            tvResultado.text = ""
+            tvExpressao.text = ""
         }
 
         backspace.setOnClickListener {
-            val string = expressao.text.toString()
+            val string = tvExpressao.text.toString()
 
             if(string.isNotBlank()){
-                expressao.text = string.substring(0,string.length-1)
+                tvExpressao.text = string.substring(0,string.length-1)
             }
-            resultado.text = ""
+            tvResultado.text = ""
         }
+
+
+        igual.setOnClickListener{
+
+            try {
+                val expressao = ExpressionBuilder(tvExpressao.text.toString()).build()
+
+                //número double
+                val resultado = expressao.evaluate()
+                //numero inteiro long
+                val longResult = resultado.toLong()
+
+                if (resultado == longResult.toDouble()){
+                    tvResultado.text = longResult.toString()
+                } else{
+                    tvResultado.text = resultado.toString()
+                }
+
+            } catch (_:Exception){
+
+            }
+
+        }
+
+
 
         fun acrescentarUmaExpressao(string: String, limpar: Boolean) {
 
-            if (resultado.text.isNotEmpty()) {
-                expressao.text = ""
+            if (tvResultado.text.isNotEmpty()) {
+                tvExpressao.text = ""
             }
             if (limpar) {
-                resultado.text = ""
-                expressao.append(string)
+                tvResultado.text = ""
+                tvExpressao.append(string)
             } else {
-                expressao.append(string)
-                resultado.append(string)
+                tvExpressao.append(tvResultado.text)
+                tvExpressao.append(string)
             }
         }
 
@@ -88,14 +115,13 @@ class MainActivity : AppCompatActivity() {
         oito.setOnClickListener { acrescentarUmaExpressao("8", true) }
         nove.setOnClickListener { acrescentarUmaExpressao("9", true) }
         ponto.setOnClickListener { acrescentarUmaExpressao(".", true) }
-        virgula.setOnClickListener { acrescentarUmaExpressao(",", true) }
 
 
         soma.setOnClickListener { acrescentarUmaExpressao("+", false) }
         subtraçao.setOnClickListener { acrescentarUmaExpressao("-", false) }
         divisao.setOnClickListener { acrescentarUmaExpressao("/", false) }
         multiplicacao.setOnClickListener { acrescentarUmaExpressao("*", false) }
-        porcentagem.setOnClickListener { acrescentarUmaExpressao("%", false) }
+
 
     }
 
