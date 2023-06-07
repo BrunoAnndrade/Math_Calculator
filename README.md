@@ -1,10 +1,10 @@
-# Calculadora IMC
+# Calculadora 
 Calculadora  foi um aplicativo que desenvolvi para praticar minhas habilidades em lógica de programação e layouts na linguagem kotlin do android. 
 
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
-<img src="/results/imagem1.png" width="260">&emsp;<img src="/results/imagem2.png" width="260">
+<img src="/result/imagem1.png" width="260">&emsp;<img src="/result/imagem2.png" width="260">
 
 ## Tecnologias
 * Kotlin
