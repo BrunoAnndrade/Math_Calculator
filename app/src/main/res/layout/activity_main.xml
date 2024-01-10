@@ -11,7 +11,7 @@
         android:id="@+id/expressao"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="143dp"
+        android:layout_marginTop="133dp"
         android:ellipsize="start"
         android:gravity="end"
         android:singleLine="true"
@@ -134,7 +134,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="horizontal">
 
         <TextView
